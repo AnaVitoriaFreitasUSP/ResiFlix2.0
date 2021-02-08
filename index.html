@@ -4,10 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     
-    <script src="./script.js"></script>
+    <main>
+        <section class="container" id="container">
+            <form class="formulario-content">
+                <label>Nome<input type="text"></label>
+                <label>E-mail: <input type="email"></label>
+                <label>Senha: <input type="password"></label>
+                <label>Confirme sua senha: <input type="password"></label>
+                <label>RG: <input type="number"></label>
+                <label>CEP: <input id="cep" type="number"></label>
+            </form>
+            <form id="dados-logradouro" class="dados-logradouro">
+                
+            </form>
+        </section>
+        <div class="botao">
+            <button id="procurar-dados">Buscar endereço</button>
+        </div>
+    </main>
+
+    <script src="./EnderecoModel.js"></script>
+    <script src="./EnderecoController.js"></script>
+    <script src="./EnderecoView.js"></script>
 </body>
 </html>
