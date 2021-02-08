@@ -1,0 +1,51 @@
+.card-largura{
+    max-width: 18rem;
+}
+
+.imagem-carrossel-zero {
+    object-fit: cover;
+    object-position: 0 50%;
+    height: 400px;
+}
+
+.imagem-carrossel-um {
+    object-fit: cover;
+    object-position: 0 40%;
+    height: 400px;
+}
+
+.imagem-carrossel-dois {
+    object-fit: cover;
+    object-position: 0 5%;
+    height: 400px;
+}
+
+.imagem-carrossel-tres {
+    object-fit: cover;
+    object-position: 0 1%;
+    height: 400px;
+}
+
+
+.fonte-titulo {
+    font-family: 'Roboto', sans-serif;
+}
+
+.cor-resiliaflix{
+    color: yellow!important;
+}
+
+.botao-cor-especial{
+    color: white;
+    background-color: darkgray;
+}
+
+.borda-cor-especial{
+    border-color: yellow;
+}
+
+.card-posicao-imagem{
+    object-fit: cover;
+    /*object-position: 0 50%;*/
+    height: 200px; 
+}
