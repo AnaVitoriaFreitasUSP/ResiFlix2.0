@@ -19,7 +19,7 @@ let arrMovies = [
 
 let arrGender = [
     "Anime/Desenho",
-    "Sci-Fi/",
+    "Sci-Fi",
     "Aventura",
     "Romance"
 ];
@@ -39,10 +39,29 @@ for(let i = 0; i < arrMovies.length; i += 4){
             console.log(JSON.parse(request.responseText));
             let img = document.createElement("img");
             img.addEventListener("click", () =>{
-                let p = document.createElement("p");
-                p.textContent = JSON.parse(request.responseText).Plot;
-                p.style.fontWeight = "bold";
-                document.getElementsByTagName("body")[0].appendChild(p);
+                if(document.getElementById("movieInfo")){
+                    document.getElementsByTagName("body")[0].removeChild(document.getElementById("movieInfo"));
+                }
+                let div = document.createElement("div");
+                div.setAttribute("id", "movieInfo");
+                document.getElementsByTagName("body")[0].appendChild(div);
+
+                let title = document.createElement("p");
+                title.textContent = "Title: " + JSON.parse(request.responseText).Title;
+                title.style.fontWeight = "bold";
+                let runTime = document.createElement("p");
+                runTime.textContent = "Run Time: " + JSON.parse(request.responseText).Runtime;
+                runTime.style.fontWeight = "bold";
+                let imdbRating = document.createElement("p");
+                imdbRating.textContent = "IMBD: " + JSON.parse(request.responseText).imdbRating;
+                let plot = document.createElement("p");
+                plot.textContent = "Plot: " + JSON.parse(request.responseText).Plot;
+                plot.style.fontWeight = "bold";
+
+                div.appendChild(title);
+                div.appendChild(runTime);
+                div.appendChild(imdbRating);
+                div.appendChild(plot);
             });
             img.src = JSON.parse(request.responseText).Poster;
             document.getElementById("p" + i).appendChild(gender);
