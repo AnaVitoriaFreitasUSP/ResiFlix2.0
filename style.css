@@ -3,14 +3,3 @@
     flex-direction: column;
     align-items: center;
 }
-
-.botao {
-    display: flex;
-    justify-content: center;
-}
-
-.dados-logradouro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
