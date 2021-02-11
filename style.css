@@ -14,18 +14,6 @@
     height: 400px;
 }
 
-.imagem-carrossel-dois {
-    object-fit: cover;
-    object-position: 0 5%;
-    height: 400px;
-}
-
-.imagem-carrossel-tres {
-    object-fit: cover;
-    object-position: 0 1%;
-    height: 400px;
-}
-
 
 .fonte-titulo {
     font-family: 'Roboto', sans-serif;
@@ -42,6 +30,10 @@
 
 .borda-cor-especial{
     border-color: yellow;
+}
+
+.card-body{
+    background-color: lightgray;
 }
 
 .card-posicao-imagem{

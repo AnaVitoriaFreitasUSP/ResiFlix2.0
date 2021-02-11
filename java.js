@@ -98,32 +98,7 @@ for (let i = 0; i < 15; i++) {
         h1.textContent = carrouselMovies[i].gender;
         innerDiv.appendChild(h1);
         document.getElementsByClassName("carousel-inner")[0].appendChild(divCarousel);
-        /*img.addEventListener("click", () =>{
-            if(document.getElementById("movieInfo")){
-                document.getElementsByTagName("body")[0].removeChild(document.getElementById("movieInfo"));
-            }
-            let div = document.createElement("div");
-            div.setAttribute("class", "movieInfo");
-            document.getElementsByTagName("body")[0].appendChild(div);
 
-            let title = document.createElement("p");
-            title.textContent = "Title: " + JSON.parse(request.responseText).Title;
-            title.style.fontWeight = "bold";
-            let runTime = document.createElement("p");
-            runTime.textContent = "Run Time: " + JSON.parse(request.responseText).Runtime;
-            runTime.style.fontWeight = "bold";
-            let imdbRating = document.createElement("p");
-            imdbRating.textContent = "IMBD: " + JSON.parse(request.responseText).imdbRating;
-            imdbRating.style.fontWeight = "bold";
-            let plot = document.createElement("p");
-            plot.textContent = "Plot: " + JSON.parse(request.responseText).Plot;
-            plot.style.fontWeight = "bold";
-
-            div.appendChild(title);
-            div.appendChild(runTime);
-            div.appendChild(imdbRating);
-            div.appendChild(plot);
-        });*/
 
     }, false);
 
@@ -135,6 +110,7 @@ for (let i = 0; i < 15; i++) {
 
 
 /*************************COMEÇO DOS FILMES QUE IRÃO APARECER NA PAGINA INICIAL******************************************************* */
+
 let bannerMovies = [
     "murder+on+the+orient+express",
     "the+hunger+games",
@@ -214,9 +190,6 @@ for(let i = 0; i < 12; i++){
 
     request.send();
 }
-
-
-
 
 
 /*************************FIM DOS FILMES QUE IRÃO APARECER NA PAGINA INICIAL************************************************************** */
