@@ -193,3 +193,61 @@ for(let i = 0; i < 12; i++){
 
 
 /*************************FIM DOS FILMES QUE IRÃO APARECER NA PAGINA INICIAL************************************************************** */
+
+
+/**************************COMEÇO DA PESQUISA DE FILMES***************************************************************************** */
+let input = document.getElementById("movieSearch");
+let button = document.getElementById("movieButtonSearch");
+
+input.addEventListener("keyup", ()=> {
+
+    if(input.value.length >= 3){
+        let div = document.getElementById("movieResult");
+        let request = new XMLHttpRequest();
+    
+        request.open("GET", `http://www.omdbapi.com/?s=${input.value.toLowerCase().replace(/\s/g, "+")}&plot=short&apikey=ff8d5bd3`);
+    
+        request.addEventListener("load", ()=>{
+            let results = JSON.parse(request.responseText).Search;
+            for(let movie in results){
+                if(results[movie].Poster != "N/A"){
+                    let img = document.createElement("img");
+                    img.src = results[movie].Poster;
+                    div.appendChild(img);
+                }
+
+            }
+            console.log(results);
+        }, false);
+        
+        request.send();
+        div.textContent = "";
+
+
+    }
+});
+
+button.addEventListener("click", () => {
+    let request = new XMLHttpRequest();
+
+    request.open("GET", `http://www.omdbapi.com/?s=${input.value.toLowerCase().replace(/\s/g, "+")}&plot=short&apikey=ff8d5bd3`);
+
+    request.addEventListener("load", () =>{
+        document.getElementById("movieResult").textContent = "";
+        if(JSON.parse(request.responseText).Poster != "N/A"){
+            let img = document.createElement("img");
+            img.src = JSON.parse(request.responseText).Poster;
+            document.getElementById("movieResult").appendChild(img);
+        }else{
+            let p = document.createElement("p");
+            p.textContent = "Not found!";
+            document.getElementById("movieResult").appendChild(p);
+        }
+
+    }, false);
+
+    request.send();
+});
+
+
+/**************************FIM DA PESQUISA DE FILMES***************************************************************************************************** */

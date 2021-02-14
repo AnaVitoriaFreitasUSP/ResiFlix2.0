@@ -53,8 +53,8 @@
             </li>
           </ul>
           <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Procurar filmes" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Procurar</button>
+            <input id="movieSearch" class="form-control me-2" type="search" placeholder="Procurar filmes" aria-label="Search">
+            <button id="movieButtonSearch" class="btn btn-outline-success" type="submit">Procurar</button>
           </form>
         </div>
       </div>
@@ -105,129 +105,12 @@
 
   <!--FIM CAROUSEL-->
 
-  <h2 class="text-center fonte-titulo cor-resiliaflix pt-5 pb-2 m-0 bg-dark">ResiliaFlix Filmes</h2>
+  <div id="movieResult"></div>
 
+  <h2 class="text-center fonte-titulo cor-resiliaflix pt-5 pb-2 m-0 bg-dark">ResiliaFlix Filmes</h2>
 
     <section class="container-fluid bg-dark" id="cards">
       <div class="row justify-content-center">
-
-        <!--
-        <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4">
-          <img src="chihiro.jpg" class="card-img-top card-posicao-imagem" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">A Viagem de Chihiro</h5>
-            <p class="card-text">Filme insteressante por bla bla bla</p>
-            <a href="#" class="btn botao-cor-especial">Veja Sinopse</a>
-          </div>
-        </article>
-
-
-        <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4">
-          <img src="littleprince.jpg" class="card-img-top card-posicao-imagem" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">O Pequeno Principe</h5>
-            <p class="card-text">Filme insteressante por bla bla bla</p>
-            <a href="#" class="btn botao-cor-especial">Veja Sinopse</a>
-          </div>
-        </article>
-
-        <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4">
-          <img src="chihiro.jpg" class="card-img-top card-posicao-imagem" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">A Viagem de Chihiro</h5>
-            <p class="card-text">Filme insteressante por bla bla bla</p>
-            <a href="#" class="btn botao-cor-especial">Veja Sinopse</a>
-          </div>
-        </article>
-
-
-        <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4">
-          <img src="littleprince.jpg" class="card-img-top card-posicao-imagem" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">O Pequeno Principe</h5>
-            <p class="card-text">Filme insteressante por bla bla bla</p>
-            <a href="#" class="btn botao-cor-especial">Veja Sinopse</a>
-          </div>
-        </article>
-
-        <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4">
-          <img src="chihiro.jpg" class="card-img-top card-posicao-imagem" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">A Viagem de Chihiro</h5>
-            <p class="card-text">Filme insteressante por bla bla bla</p>
-            <a href="#" class="btn botao-cor-especial">Veja Sinopse</a>
-          </div>
-        </article>
-
-
-        <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4">
-          <img src="littleprince.jpg" class="card-img-top card-posicao-imagem" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">O Pequeno Principe</h5>
-            <p class="card-text">Filme insteressante por bla bla bla</p>
-            <a href="#" class="btn botao-cor-especial">Veja Sinopse</a>
-          </div>
-        </article>
-
-        <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4">
-          <img src="chihiro.jpg" class="card-img-top card-posicao-imagem" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">A Viagem de Chihiro</h5>
-            <p class="card-text">Filme insteressante por bla bla bla</p>
-            <a href="#" class="btn botao-cor-especial">Veja Sinopse</a>
-          </div>
-        </article>
-
-
-        <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4">
-          <img src="littleprince.jpg" class="card-img-top card-posicao-imagem" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">O Pequeno Principe</h5>
-            <p class="card-text">Filme insteressante por bla bla bla</p>
-            <a href="#" class="btn botao-cor-especial">Veja Sinopse</a>
-          </div>
-        </article>
-
-        <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4">
-          <img src="chihiro.jpg" class="card-img-top card-posicao-imagem" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">A Viagem de Chihiro</h5>
-            <p class="card-text">Filme insteressante por bla bla bla</p>
-            <a href="#" class="btn botao-cor-especial">Veja Sinopse</a>
-          </div>
-        </article>
-
-
-        <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4">
-          <img src="littleprince.jpg" class="card-img-top card-posicao-imagem" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">O Pequeno Principe</h5>
-            <p class="card-text">Filme insteressante por bla bla bla</p>
-            <a href="#" class="btn botao-cor-especial">Veja Sinopse</a>
-          </div>
-        </article>
-
-
-        <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4">
-          <img src="chihiro.jpg" class="card-img-top card-posicao-imagem" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">A Viagem de Chihiro</h5>
-            <p class="card-text">Filme insteressante por bla bla bla</p>
-            <a href="#" class="btn botao-cor-especial">Veja Sinopse</a>
-          </div>
-        </article>
-
-
-        <article class="card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4">
-          <img src="littleprince.jpg" class="card-img-top card-posicao-imagem" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">O Pequeno Principe</h5>
-            <p class="card-text">Filme insteressante por bla bla bla</p>
-            <a href="#" class="btn botao-cor-especial">Veja Sinopse</a>
-          </div>
-        </article>
-
-        -->
       </div>
     </section>
   </main>  

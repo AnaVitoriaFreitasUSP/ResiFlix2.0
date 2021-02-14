@@ -41,3 +41,12 @@
     /*object-position: 0 50%;*/
     height: 200px; 
 }
+
+#movieResult{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: lightgray;
+}
