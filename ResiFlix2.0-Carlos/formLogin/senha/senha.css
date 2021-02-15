@@ -1,0 +1,53 @@
+.back-color {
+    background-color: #222325;
+}
+
+.img-header {
+    padding: 20px;
+    background-color: black;
+}
+
+.content {
+    background-color: #222325;
+    height: 350px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#form {
+    width: 400px;
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+
+}
+
+.botao {
+    color: black;
+    width: 400px;
+    background-color: orange;
+    margin-top: 15px;
+    align-items: center;
+    border-color: darkorange;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s
+    ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}   
+
+    
+
