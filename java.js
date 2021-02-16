@@ -1,7 +1,6 @@
 /*************************FILMES QUE IRAO APARECER NO CARROSSEL************************************** */
-let carrouselMovies = [
-    {
-        name:  "the+little+prince",
+let carrouselMovies = [{
+        name: "the+little+prince",
         gender: "Anime/Desenho"
     },
 
@@ -126,22 +125,81 @@ let bannerMovies = [
     "brokeback+mountain"
 ];
 
-for(let i = 0; i < 12; i++){
+for (let i = 0; i < 12; i++) {
     let request = new XMLHttpRequest();
-    request.open("GET", `http://www.omdbapi.com/?t=${bannerMovies[i]}&plot=short&apikey=ff8d5bd3`);
+    request.open("GET", `http://www.omdbapi.com/?t=${bannerMovies[i]}&plot=full&apikey=ff8d5bd3`);
 
     request.addEventListener("load", () => {
         let article = document.createElement("article");
         article.setAttribute("class", "card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4");
+        article.style.backgroundColor = "#212529";
         document.getElementsByClassName("row justify-content-center")[0].appendChild(article);
-        
+
+        let div1 = document.createElement("div");
+        div1.setAttribute("class", "container");
+        article.appendChild(div1);
+
         let img = document.createElement("img");
         img.setAttribute("class", "card-img-top card-posicao-imagem");
         img.setAttribute("alt", "...");
         img.src = JSON.parse(request.responseText).Poster;
-        article.appendChild(img);
+        div1.appendChild(img);
 
-        let div = document.createElement("div");
+        let div2 = document.createElement("div");
+        div2.setAttribute("class", "middle");
+        div1.appendChild(div2);
+
+        let div3 = document.createElement("button");
+        div3.setAttribute("class", "text");
+        div3.textContent = "Detalhes";
+        div2.appendChild(div3);
+
+        div3.addEventListener("click", () => {
+
+            div3.addEventListener("mouseover", () => {
+                article.setAttribute("class", "zoom");
+                div1.removeChild(img);
+                div1.setAttribute("class", "container-flex");
+                div1.style.padding = "150px";
+                div1.style.backgroundColor = "black";
+
+                let poster = document.createElement("img");
+                poster.src = JSON.parse(request.responseText).Poster;
+                div1.appendChild(poster);
+
+                let divInfo = document.createElement("div");
+                divInfo.setAttribute("id", "divInfo");
+                divInfo.style.backgroundColor = "#222523";
+                div1.appendChild(divInfo);
+
+                let title = document.createElement("p");
+                title.setAttribute("id", "titleStyle");
+                title.textContent = JSON.parse(request.responseText).Title;
+                divInfo.appendChild(title);
+
+                let runTime = document.createElement("p");
+                runTime.textContent = "Run Time: " + JSON.parse(request.responseText).Runtime;
+                runTime.style.color = "white";
+                divInfo.appendChild(runTime);
+
+                let imdbRating = document.createElement("p");
+                imdbRating.textContent = "IMBD: " + JSON.parse(request.responseText).imdbRating;
+                imdbRating.style.color = "white";
+                divInfo.appendChild(imdbRating);
+
+                let plot = document.createElement("p");
+                plot.textContent = "Plot: " + JSON.parse(request.responseText).Plot;
+                plot.style.color = "white";
+                divInfo.appendChild(plot);
+
+            });
+
+
+
+        });
+
+
+        /*let div = document.createElement("div");
         div.setAttribute("class", "card-body");
         div.setAttribute("id", i);
         article.appendChild(div);
@@ -184,7 +242,7 @@ for(let i = 0; i < 12; i++){
             div.appendChild(runTime);
             div.appendChild(imdbRating);
             div.appendChild(plot);
-        });
+        });*/
 
     }, false);
 
@@ -197,20 +255,37 @@ for(let i = 0; i < 12; i++){
 
 /**************************COMEÇO DA PESQUISA DE FILMES***************************************************************************** */
 let input = document.getElementById("movieSearch");
-let button = document.getElementById("movieButtonSearch");
+//let button = document.getElementById("movieButtonSearch");
 
-input.addEventListener("keyup", ()=> {
+input.addEventListener("keyup", () => {
+    if (document.getElementById("buttonSearch")) {
+        document.getElementsByClassName("d-flex")[0].removeChild(document.getElementById("buttonSearch"));
+    }
+    let button = document.createElement("button");
+    button.setAttribute("class", "botao-cor-especial");
+    button.setAttribute("id", "buttonSearch");
+    button.setAttribute("aria-label", "Close");
+    button.textContent = "X";
+    document.getElementsByClassName("d-flex")[0].appendChild(button);
 
-    if(input.value.length >= 3){
+    button.addEventListener("click", () => {
+        document.getElementById("movieResult").innerText = "";
+        input.value = "";
+        if (document.getElementById("buttonSearch")) {
+            document.getElementsByClassName("d-flex")[0].removeChild(document.getElementById("buttonSearch"));
+        }
+    });
+
+    if (input.value.length >= 3) {
         let div = document.getElementById("movieResult");
         let request = new XMLHttpRequest();
-    
+
         request.open("GET", `http://www.omdbapi.com/?s=${input.value.toLowerCase().replace(/\s/g, "+")}&plot=short&apikey=ff8d5bd3`);
-    
-        request.addEventListener("load", ()=>{
+
+        request.addEventListener("load", () => {
             let results = JSON.parse(request.responseText).Search;
-            for(let movie in results){
-                if(results[movie].Poster != "N/A"){
+            for (let movie in results) {
+                if (results[movie].Poster != "N/A") {
                     let img = document.createElement("img");
                     img.src = results[movie].Poster;
                     div.appendChild(img);
@@ -219,7 +294,7 @@ input.addEventListener("keyup", ()=> {
             }
             console.log(results);
         }, false);
-        
+
         request.send();
         div.textContent = "";
 
@@ -227,7 +302,7 @@ input.addEventListener("keyup", ()=> {
     }
 });
 
-button.addEventListener("click", () => {
+/*button.addEventListener("click", () => {
     let request = new XMLHttpRequest();
 
     request.open("GET", `http://www.omdbapi.com/?s=${input.value.toLowerCase().replace(/\s/g, "+")}&plot=short&apikey=ff8d5bd3`);
@@ -247,7 +322,27 @@ button.addEventListener("click", () => {
     }, false);
 
     request.send();
-});
+});*/
 
 
 /**************************FIM DA PESQUISA DE FILMES***************************************************************************************************** */
+
+
+
+
+/****************************INICIO DA FUNCAO QUE VAI GERAR TUDO DE NOVO************************************************************************* */
+document.getElementById("movieSearch").addEventListener("click", () => {
+    console.log(document.getElementById("movieSearch").value);
+    if (document.getElementById("movieSearch") == "") {
+        document.getElementById("movieResult").innerText = "";
+
+    }
+
+});
+
+
+
+
+
+
+/*******************************FIM DA FUNCAO QUE VAI GERAR TUDO DE NOVO***********************************************************************************8 */
