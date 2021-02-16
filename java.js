@@ -192,6 +192,13 @@ for (let i = 0; i < 12; i++) {
                 plot.style.color = "white";
                 divInfo.appendChild(plot);
 
+
+                let buttonHide = document.createElement("button");
+                buttonHide.setAttribute("id", "button-hide");
+                buttonHide.textContent = "Hide";
+                buttonHide.style.color = "white";
+                divInfo.appendChild(buttonHide);
+
             });
 
 

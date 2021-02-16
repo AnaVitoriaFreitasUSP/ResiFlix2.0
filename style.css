@@ -148,3 +148,10 @@ body {
     font-size: 50px;
     color: white;
 }
+
+#button-hide {
+    padding: 5px;
+    border-radius: 2px;
+    border-color: yellow;
+    background-color: #222523;
+}
