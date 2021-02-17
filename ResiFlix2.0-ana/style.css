@@ -1,0 +1,157 @@
+.card-largura {
+    max-width: 18rem;
+}
+
+body {
+    width: auto;
+    height: auto;
+}
+
+.imagem-carrossel {
+    object-fit: cover;
+    object-position: 0 60%;
+    height: 400px;
+}
+
+.imagem-carrossel-zero {
+    object-fit: cover;
+    object-position: 0 60%;
+    height: 400px;
+}
+
+.fonte-titulo {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-weight: bold;
+}
+
+.cor-resiliaflix {
+    color: yellow!important;
+}
+
+.botao-cor-especial {
+    color: white;
+    background-color: darkgray;
+}
+
+.borda-cor-especial {
+    border-color: yellow;
+}
+
+.card-body {
+    background-color: lightgray;
+}
+
+.card-posicao-imagem {
+    object-fit: cover;
+    /*object-position: 0 50%;*/
+    height: 200px;
+}
+
+#movieResult {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: lightgray;
+}
+
+.botao-cor-especial {
+    padding: 5px;
+}
+
+.container {
+    position: relative;
+    width: 50%;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.container:hover .image {
+    opacity: 0.3;
+}
+
+.container:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+#movieSearch {
+    background-color: lightyellow;
+}
+
+.zoom {
+    transform: rotate(360deg);
+}
+
+.grow {
+    padding: 50px;
+    background-color: green;
+    transition: transform .2s;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.grow:hover {
+    -ms-transform: scale(1.5);
+    /* IE 9 */
+    -webkit-transform: scale(1.5);
+    /* Safari 3-8 */
+    transform: scale(1.5);
+}
+
+.container-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 600px;
+    width: 1800px;
+}
+
+#divInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 500px;
+    width: 900px;
+}
+
+#titleStyle {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 50px;
+    color: white;
+}
+
+#button-hide {
+    padding: 5px;
+    border-radius: 2px;
+    border-color: yellow;
+    background-color: #222523;
+}
