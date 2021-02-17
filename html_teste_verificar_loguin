@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação</title>
+</head>
+<body>
+
+    <form >
+        <label for="loguin">Loguin:</label><br>
+        <input type="text" id="user" name="loguin"><br>
+
+        <label for="senha">Senha:</label><br>
+        <input type="text" id="senha" name="senha"><br><br>
+       
+      </form>
+
+       <button type="submit" id="button">Click</button>
+
+
+
+    <script src="verifica_senha.js"></script>
+</body>
+</html>
