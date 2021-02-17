@@ -2,6 +2,16 @@
     max-width: 18rem;
 }
 
+@media screen and (min-width: 267px) and (max-width: 768px) {
+    #movieInfo {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+
 @media(max-width:767px) {
     .carousel-inner>.carousel-item>a>img,
     .carousel-inner>.carousel-item>img {
@@ -29,37 +39,41 @@
 .imagem-carrossel-zero {
     object-fit: fill;
     object-position: 0% 70%;
-    height: 400px;
+    height: 460px;
 }
 
 .imagem-carrossel-um {
     object-fit: fill;
     object-position: 15% 10%;
-    height: 400px;
+    height: 460px;
 }
 
 .imagem-carrossel-dois {
     object-fit: fill;
     object-position: 15% 0%;
-    height: 400px;
+    height: 460px;
 }
 
 .imagem-carrossel-tres {
     object-fit: fill;
     object-position: 15% 10%;
-    height: 400px;
+    height: 460px;
 }
 
 .imagem-carrossel-quatro {
     object-fit: fill;
     object-position: 15% 10%;
-    height: 400px;
+    height: 460px;
+}
+
+form {
+    margin-top: 0em;
 }
 
 .imagem-carrossel-cinco {
     object-fit: fill;
     object-position: 15% 10%;
-    height: 400px;
+    height: 460px;
 }
 
 .fonte-titulo {
@@ -96,17 +110,25 @@ body {
     height: 200px;
 }
 
+#movieInfo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
 #movieResult {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    background-color: lightgray;
+    justify-content: space-evenly;
+    background-color: #222523;
 }
 
 .botao-cor-especial {
-    padding: 20px;
+    padding: 10px;
 }
 
 .container {
@@ -122,15 +144,21 @@ body {
 }
 
 .middle {
+    display: flex;
+    opacity: 0;
+    justify-content: center;
     position: absolute;
     transition: .5s ease;
-    opacity: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
+}
+
+.middle:hover {
+    opacity: inherit;
 }
 
 .container:hover .image {
@@ -172,8 +200,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 500px;
-    width: 900px;
 }
 
 #titleStyle {
@@ -187,4 +213,21 @@ body {
     border-radius: 2px;
     border-color: yellow;
     background-color: #222523;
+}
+
+body {
+    background-color: #222523;
+    padding-bottom: inherit;
+}
+
+footer {
+    width: 100%;
+    background-color: #222523;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+nav {
+    padding-top: 15px;
 }
