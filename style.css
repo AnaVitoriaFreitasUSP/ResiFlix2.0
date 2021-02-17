@@ -72,6 +72,10 @@
     color: yellow !important;
 }
 
+body {
+    height: fit-content;
+}
+
 .botao-cor-especial {
     color: white;
     background-color: darkgray;
