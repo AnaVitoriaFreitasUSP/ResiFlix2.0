@@ -21,23 +21,18 @@ for (let i = 0; i < 12; i++) {
 
     request.addEventListener("load", () => {
         let article = document.createElement("article");
-        article.setAttribute("class", "card borda-cor-especial card-largura p-0 m-4 col-12 col-md-4");
+        article.setAttribute("class", "card borda-cor-especial card-largura p-0 m-2 col-12 col-md-4");
         article.style.backgroundColor = "#212529";
         document.getElementsByClassName("row justify-content-center")[0].appendChild(article);
 
-        let div1 = document.createElement("div");
-        div1.setAttribute("class", "container");
-        article.appendChild(div1);
-
         let img = document.createElement("img");
-        img.setAttribute("class", "card-img-top card-posicao-imagem");
         img.setAttribute("alt", "...");
         img.src = JSON.parse(request.responseText).Poster;
-        div1.appendChild(img);
+        article.appendChild(img);
 
         let div2 = document.createElement("div");
         div2.setAttribute("class", "middle");
-        div1.appendChild(div2);
+        article.appendChild(div2);
 
         let div3 = document.createElement("button");
         div3.setAttribute("class", "text");

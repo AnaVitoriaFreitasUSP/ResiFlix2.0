@@ -2,20 +2,63 @@
     max-width: 18rem;
 }
 
-body {
-    width: auto;
-    height: auto;
+@media(max-width:767px) {
+    .carousel-inner>.carousel-item>a>img,
+    .carousel-inner>.carousel-item>img {
+        width: 100%;
+        height: 150px;
+    }
 }
 
-.imagem-carrossel {
-    object-fit: cover;
-    object-position: 0 60%;
-    height: 400px;
+@media(max-width:450px) {
+    .carousel-inner>.carousel-item>a>img,
+    .carousel-inner>.carousel-item>img {
+        width: 100%;
+        height: 150px;
+    }
+}
+
+@media(max-width:320px) {
+    .carousel-inner>.carousel-item>a>img,
+    .carousel-inner>.carousel-item>img {
+        width: 100%;
+        height: 150px;
+    }
 }
 
 .imagem-carrossel-zero {
-    object-fit: cover;
-    object-position: 0 60%;
+    object-fit: fill;
+    object-position: 0% 70%;
+    height: 400px;
+}
+
+.imagem-carrossel-um {
+    object-fit: fill;
+    object-position: 15% 10%;
+    height: 400px;
+}
+
+.imagem-carrossel-dois {
+    object-fit: fill;
+    object-position: 15% 0%;
+    height: 400px;
+}
+
+.imagem-carrossel-tres {
+    object-fit: fill;
+    object-position: 15% 10%;
+    height: 400px;
+}
+
+.imagem-carrossel-quatro {
+    object-fit: fill;
+    object-position: 15% 10%;
+    height: 400px;
+}
+
+.imagem-carrossel-cinco {
+    object-fit: fill;
+    object-position: 15% 10%;
     height: 400px;
 }
 
@@ -26,7 +69,7 @@ body {
 }
 
 .cor-resiliaflix {
-    color: yellow!important;
+    color: yellow !important;
 }
 
 .botao-cor-especial {
@@ -35,6 +78,7 @@ body {
 }
 
 .borda-cor-especial {
+    border: 3px thin yellow;
     border-color: yellow;
 }
 
@@ -74,6 +118,7 @@ body {
 }
 
 .middle {
+    position: absolute;
     transition: .5s ease;
     opacity: 0;
     position: absolute;
@@ -93,6 +138,7 @@ body {
 }
 
 .text {
+    position: absolute;
     background-color: yellow;
     color: black;
     font-weight: bold;
@@ -106,23 +152,6 @@ body {
 
 .zoom {
     transform: rotate(360deg);
-}
-
-.grow {
-    padding: 50px;
-    background-color: green;
-    transition: transform .2s;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-}
-
-.grow:hover {
-    -ms-transform: scale(1.5);
-    /* IE 9 */
-    -webkit-transform: scale(1.5);
-    /* Safari 3-8 */
-    transform: scale(1.5);
 }
 
 .container-flex {
