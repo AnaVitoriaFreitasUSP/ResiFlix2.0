@@ -2,16 +2,6 @@
     max-width: 18rem;
 }
 
-@media screen and (min-width: 267px) and (max-width: 768px) {
-    #movieInfo {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-    }
-}
-
 @media(max-width:767px) {
     .carousel-inner>.carousel-item>a>img,
     .carousel-inner>.carousel-item>img {
@@ -115,7 +105,7 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 #movieResult {
@@ -200,11 +190,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: 15px;
 }
 
 #titleStyle {
     font-family: "Times New Roman", Times, serif;
-    font-size: 50px;
+    font-size: 40px;
     color: white;
 }
 
@@ -230,4 +221,26 @@ footer {
 
 nav {
     padding-top: 15px;
+}
+
+@media screen and (min-width: 267px) and (max-width: 768px) {
+    .container-flex {
+        display: flex;
+        flex-direction: row;
+    }
+    #sinopse {
+        display: none;
+    }
+    #poster {
+        width: 200px;
+    }
+    #titleStyle {
+        font-size: 25px;
+        font-weight: bold;
+    }
+    #movieInfo {
+        margin-bottom: 100px;
+        padding: 15px;
+        text-align: center;
+    }
 }

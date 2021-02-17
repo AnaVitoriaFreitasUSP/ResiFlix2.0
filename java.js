@@ -44,36 +44,53 @@ function geraPosters() {
                 let divGeradaBotao = document.createElement("div");
                 divGeradaBotao.setAttribute("class", "zoom");
                 divGeradaBotao.setAttribute("class", "container-flex");
-                divGeradaBotao.style.backgroundColor = "black";
-                document.getElementById("movieInfo").appendChild(divGeradaBotao);
+                divGeradaBotao.style.backgroundColor = "#222523";
 
+                if (document.getElementById("movieInfo").innerText == "") {
+                    document.getElementById("movieInfo").appendChild(divGeradaBotao);
+                } else {
+                    document.getElementById("movieInfo").innerText = "";
+                    document.getElementById("movieInfo").appendChild(divGeradaBotao);
+                }
+
+                location.href = "#";
+                location.href = "#movieInfo";
 
                 let poster = document.createElement("img");
+                poster.setAttribute("id", "poster");
+                poster.style.paddingLeft = "20px";
                 poster.src = JSON.parse(request.responseText).Poster;
                 divGeradaBotao.appendChild(poster);
 
                 let divInfo = document.createElement("div");
+                divInfo.setAttribute("class", "container");
                 divInfo.setAttribute("id", "divInfo");
                 divInfo.style.backgroundColor = "#222523";
                 divGeradaBotao.appendChild(divInfo);
 
                 let title = document.createElement("p");
+                title.setAttribute("class", "text-lg-start");
                 title.setAttribute("id", "titleStyle");
                 title.textContent = JSON.parse(request.responseText).Title;
                 divInfo.appendChild(title);
 
                 let runTime = document.createElement("p");
-                runTime.textContent = "Run Time: " + JSON.parse(request.responseText).Runtime;
+                runTime.textContent = "Ano: " + JSON.parse(request.responseText).Year + " - " + "IMDB: " + JSON.parse(request.responseText).imdbRating + " - " + JSON.parse(request.responseText).Runtime;
                 runTime.style.color = "white";
+                runTime.style.fontWeight = "bold";
                 divInfo.appendChild(runTime);
 
                 let imdbRating = document.createElement("p");
-                imdbRating.textContent = "IMBD: " + JSON.parse(request.responseText).imdbRating;
+                imdbRating.setAttribute("class", "text-lg-start");
+                imdbRating.textContent = "Diretor/Roterista: " + JSON.parse(request.responseText).Director + ", " + JSON.parse(request.responseText).Writer;
                 imdbRating.style.color = "white";
                 divInfo.appendChild(imdbRating);
 
                 let plot = document.createElement("p");
-                plot.textContent = "Plot: " + JSON.parse(request.responseText).Plot;
+                plot.setAttribute("id", "sinopse");
+                plot.setAttribute("class", "text-lg-start");
+                let sinopse = "Plot: ";
+                plot.textContent = sinopse + JSON.parse(request.responseText).Plot;
                 plot.style.color = "white";
                 divInfo.appendChild(plot);
 
