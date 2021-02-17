@@ -1,0 +1,32 @@
+(()=>{
+    
+    /**
+     * @description criando variáveis para receber informações do HTML
+    */
+
+    const loguin = document.querySelector("#user");
+
+    const password = document.querySelector("#senha");
+
+    const button = document.querySelector("#button");
+
+    /**
+     * @description botão com a função de obter a senha armazenada no localStore
+     * e comparar com a senha fornecida pelo usuário
+    */
+    button.addEventListener("click", ()=>{
+
+        const storePassword = localStorage.getItem(loguin.value);
+
+        if(password.value == storePassword){
+
+            alert(`Seja bem vindo "${loguin.value}"`)
+
+        }else{
+            
+            alert("Usuário ou senha inválido.")
+        };
+
+    });
+
+})();
