@@ -1,0 +1,24 @@
+(()=>{
+
+   /**
+    * @description criando variáveis para receber informações do HTML.
+   */
+   const loguin = document.querySelector("#user");
+
+   const password = document.querySelector("#senha");
+
+   const button = document.querySelector("#button");
+
+   /**
+    * @description botão com a função cadastrar o loguin e senha do
+    * usuário no localStorage.
+   */
+
+   button.addEventListener("click", ()=>{
+
+      localStorage.setItem(loguin.value, loguin.value);
+      localStorage.setItem(loguin.value, password.value); 
+      
+   });
+
+})();
