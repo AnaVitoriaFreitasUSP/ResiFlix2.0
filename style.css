@@ -8,15 +8,15 @@ body {
 }
 
 .imagem-carrossel {
-    object-fit: fill;
-    object-position: 0 40%;
-    height: 600px;
+    object-fit: cover;
+    object-position: 0 60%;
+    height: 400px;
 }
 
 .imagem-carrossel-zero {
     object-fit: cover;
-    object-position: 0 40%;
-    height: 600px;
+    object-position: 0 60%;
+    height: 400px;
 }
 
 .fonte-titulo {

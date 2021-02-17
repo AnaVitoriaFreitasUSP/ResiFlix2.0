@@ -1,113 +1,3 @@
-/*************************FILMES QUE IRAO APARECER NO CARROSSEL************************************** */
-let carrouselMovies = [{
-        name: "the+little+prince",
-        gender: "Anime/Desenho"
-    },
-
-    {
-        name: "chicken+run",
-        gender: "Anime/Desenho"
-    },
-
-    {
-        name: "coco",
-        gender: "Anime/Desenho"
-    },
-
-    {
-        name: "arrival",
-        gender: "Ficção Científica"
-    },
-
-    {
-        name: "interstellar",
-        gender: "Ficção Científica"
-    },
-
-    {
-        name: "lucy",
-        gender: "Ficção Científica"
-    },
-
-    {
-        name: "blade+runner",
-        gender: "Aventura"
-    },
-
-    {
-        name: "logan",
-        gender: "Ação"
-    },
-
-    {
-        name: "fantastic+beasts+and+where+to+find+them",
-        gender: "Aventura"
-    },
-
-    {
-        name: "aquaman",
-        gender: "Aventura"
-    },
-
-    {
-        name: "the+old+guard",
-        gender: "Ação"
-    },
-
-    {
-        name: "yesterday",
-        gender: "Romance"
-    },
-
-    {
-        name: "a+star+is+born",
-        gender: "Romance"
-    },
-
-    {
-        name: "her",
-        gender: "Romance"
-    },
-
-    {
-        name: "carol",
-        gender: "Romance"
-    }
-
-];
-
-
-for (let i = 0; i < 15; i++) {
-    let request = new XMLHttpRequest();
-    request.open("GET", `http://www.omdbapi.com/?t=${carrouselMovies[i].name}&plot=full&apikey=ff8d5bd3`);
-
-    request.addEventListener("load", () => {
-        let divCarousel = document.createElement("div");
-        divCarousel.setAttribute("class", "carousel-item");
-        let img = document.createElement("img");
-        img.src = JSON.parse(request.responseText).Poster;
-        img.setAttribute("class", "d-block w-100 imagem-carrossel");
-        img.setAttribute("alt", "...");
-        let innerDiv = document.createElement("div");
-        innerDiv.setAttribute("class", "carousel-caption d-none d-md-block h-25");
-        divCarousel.appendChild(img);
-        divCarousel.appendChild(innerDiv);
-        let h1 = document.createElement("h1");
-        h1.setAttribute("class", "fonte-titulo");
-        h1.textContent = carrouselMovies[i].gender;
-        innerDiv.appendChild(h1);
-        document.getElementsByClassName("carousel-inner")[0].appendChild(divCarousel);
-
-
-    }, false);
-
-    request.send();
-}
-
-
-/**************************FIM DOS FILMES QUE IRÃO APARECER NO CARROSSEL****************************************************** */
-
-
 /*************************COMEÇO DOS FILMES QUE IRÃO APARECER NA PAGINA INICIAL******************************************************* */
 
 let bannerMovies = [
@@ -127,7 +17,7 @@ let bannerMovies = [
 
 for (let i = 0; i < 12; i++) {
     let request = new XMLHttpRequest();
-    request.open("GET", `http://www.omdbapi.com/?t=${bannerMovies[i]}&plot=full&apikey=ff8d5bd3`);
+    request.open("GET", `https://www.omdbapi.com/?t=${bannerMovies[i]}&plot=full&apikey=ff8d5bd3`);
 
     request.addEventListener("load", () => {
         let article = document.createElement("article");
@@ -205,52 +95,6 @@ for (let i = 0; i < 12; i++) {
 
         });
 
-
-        /*let div = document.createElement("div");
-        div.setAttribute("class", "card-body");
-        div.setAttribute("id", i);
-        article.appendChild(div);
-
-        let h5 = document.createElement("h5");
-        h5.setAttribute("class", "card-title");
-        h5.textContent = JSON.parse(request.responseText).Title;
-        div.appendChild(h5);
-
-        let p = document.createElement("p");
-        p.setAttribute("class", "card-text");
-        p.textContent = JSON.parse(request.responseText).Production;
-        div.appendChild(p);
-
-        let a = document.createElement("a");
-        a.setAttribute("class", "btn botao-cor-especial");
-        a.textContent = "Detalhes";
-        div.appendChild(a);
-
-        a.addEventListener("click", () => {
-            if(document.getElementById("info" + i)){
-                document.getElementById(i).removeChild(document.getElementById("info" + i));
-            }
-            let div = document.createElement("div");
-            div.setAttribute("id", "info" + i);
-            document.getElementById(i).appendChild(div);
-            let title = document.createElement("p");
-            title.textContent = "Title: " + JSON.parse(request.responseText).Title;
-            title.style.fontWeight = "bold";
-            let runTime = document.createElement("p");
-            runTime.textContent = "Run Time: " + JSON.parse(request.responseText).Runtime;
-            runTime.style.fontWeight = "bold";
-            let imdbRating = document.createElement("p");
-            imdbRating.textContent = "IMBD: " + JSON.parse(request.responseText).imdbRating;
-            imdbRating.style.fontWeight = "bold";
-            let plot = document.createElement("p");
-            plot.textContent = "Plot: " + JSON.parse(request.responseText).Plot;
-            plot.style.fontWeight = "bold";
-            div.appendChild(title);
-            div.appendChild(runTime);
-            div.appendChild(imdbRating);
-            div.appendChild(plot);
-        });*/
-
     }, false);
 
     request.send();
@@ -259,23 +103,22 @@ for (let i = 0; i < 12; i++) {
 
 /*************************FIM DOS FILMES QUE IRÃO APARECER NA PAGINA INICIAL************************************************************** */
 
-
+//MATHEUS AQUI!!!!!!!!!!!!!!!!!!!!!!!!
 /**************************COMEÇO DA PESQUISA DE FILMES***************************************************************************** */
 let input = document.getElementById("movieSearch");
-//let button = document.getElementById("movieButtonSearch");
 
-input.addEventListener("keyup", () => {
-    if (document.getElementById("buttonSearch")) {
+input.addEventListener("keyup", () => { //eventListener que irá gerar o botão "X" apenas quando o usuário estiver digitando e para começar a pesquisar na API enquanto o usuário digita
+    if (document.getElementById("buttonSearch")) { //esse if serve para não gerar vários botões "X" conforme o usuário digita
         document.getElementsByClassName("d-flex")[0].removeChild(document.getElementById("buttonSearch"));
     }
-    let button = document.createElement("button");
-    button.setAttribute("class", "botao-cor-especial");
+    let button = document.createElement("button"); //botão "X"
+    button.setAttribute("class", "botao-cor-especial"); //TODO: MELHORAR O CSS DESSE BOTÃO, está muito grande e o "X" que eu coloquei também
     button.setAttribute("id", "buttonSearch");
     button.setAttribute("aria-label", "Close");
     button.textContent = "X";
     document.getElementsByClassName("d-flex")[0].appendChild(button);
 
-    button.addEventListener("click", () => {
+    button.addEventListener("click", () => { //TODO: ao ser clicado, o botão deverá retornr toda a home inicial como era antes 
         document.getElementById("movieResult").innerText = "";
         input.value = "";
         if (document.getElementById("buttonSearch")) {
@@ -283,11 +126,18 @@ input.addEventListener("keyup", () => {
         }
     });
 
-    if (input.value.length >= 3) {
+    //LISTA DE TODO:
+    //----> arrumar a estilização do botão de "X"
+    //----> ao ser clicar no botão "X" o aspecto da página home deverá ser restaurado
+    //----> quando o usuário digitar (eventListener de keyup) o carrossel e o painel dos 12 filmes deverá sumir para dar espaço para os resultados da pesquisa do usuário
+    //----> o tamanho dos filmes deverá ser padronizado pois há posters maiores que os outros
+
+
+    if (input.value.length >= 3) { //NÃO SE PREOCUPE COM ESSA PARTE pois isso só busca os filmes na API
         let div = document.getElementById("movieResult");
         let request = new XMLHttpRequest();
 
-        request.open("GET", `http://www.omdbapi.com/?s=${input.value.toLowerCase().replace(/\s/g, "+")}&plot=short&apikey=ff8d5bd3`);
+        request.open("GET", `https://www.omdbapi.com/?s=${input.value.toLowerCase().replace(/\s/g, "+")}&plot=short&apikey=ff8d5bd3`);
 
         request.addEventListener("load", () => {
             let results = JSON.parse(request.responseText).Search;
@@ -295,7 +145,7 @@ input.addEventListener("keyup", () => {
                 if (results[movie].Poster != "N/A") {
                     let img = document.createElement("img");
                     img.src = results[movie].Poster;
-                    div.appendChild(img);
+                    div.appendChild(img); //CASO PRECISE: aqui que os filmes estão sendo renderiados, é um flex-box com id="movieResult"
                 }
 
             }
@@ -303,34 +153,11 @@ input.addEventListener("keyup", () => {
         }, false);
 
         request.send();
-        div.textContent = "";
+        div.textContent = ""; //isso daqui apaga a lista de filmes geradas enquanto o usuário digita, pois se ele continuou digitando ele ainda não encontrou o filme que queria. Então tudo é apagado para gerar espaço para novos resultados
 
 
     }
 });
-
-/*button.addEventListener("click", () => {
-    let request = new XMLHttpRequest();
-
-    request.open("GET", `http://www.omdbapi.com/?s=${input.value.toLowerCase().replace(/\s/g, "+")}&plot=short&apikey=ff8d5bd3`);
-
-    request.addEventListener("load", () =>{
-        document.getElementById("movieResult").textContent = "";
-        if(JSON.parse(request.responseText).Poster != "N/A"){
-            let img = document.createElement("img");
-            img.src = JSON.parse(request.responseText).Poster;
-            document.getElementById("movieResult").appendChild(img);
-        }else{
-            let p = document.createElement("p");
-            p.textContent = "Not found!";
-            document.getElementById("movieResult").appendChild(p);
-        }
-
-    }, false);
-
-    request.send();
-});*/
-
 
 /**************************FIM DA PESQUISA DE FILMES***************************************************************************************************** */
 
