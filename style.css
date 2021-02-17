@@ -1,0 +1,195 @@
+.card-largura {
+    max-width: 18rem;
+}
+
+@media(max-width:767px) {
+    .carousel-inner>.carousel-item>a>img,
+    .carousel-inner>.carousel-item>img {
+        width: 100%;
+        height: 150px;
+    }
+}
+
+@media(max-width:450px) {
+    .carousel-inner>.carousel-item>a>img,
+    .carousel-inner>.carousel-item>img {
+        width: 100%;
+        height: 150px;
+    }
+}
+
+@media(max-width:320px) {
+    .carousel-inner>.carousel-item>a>img,
+    .carousel-inner>.carousel-item>img {
+        width: 100%;
+        height: 150px;
+    }
+}
+
+.imagem-carrossel-zero {
+    object-fit: fill;
+    object-position: 0% 70%;
+    height: 400px;
+}
+
+.imagem-carrossel-um {
+    object-fit: fill;
+    object-position: 15% 10%;
+    height: 400px;
+}
+
+.imagem-carrossel-dois {
+    object-fit: fill;
+    object-position: 15% 0%;
+    height: 400px;
+}
+
+.imagem-carrossel-tres {
+    object-fit: fill;
+    object-position: 15% 10%;
+    height: 400px;
+}
+
+.imagem-carrossel-quatro {
+    object-fit: fill;
+    object-position: 15% 10%;
+    height: 400px;
+}
+
+.imagem-carrossel-cinco {
+    object-fit: fill;
+    object-position: 15% 10%;
+    height: 400px;
+}
+
+.fonte-titulo {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-weight: bold;
+}
+
+.cor-resiliaflix {
+    color: yellow !important;
+}
+
+.botao-cor-especial {
+    color: white;
+    background-color: darkgray;
+}
+
+.borda-cor-especial {
+    border: 3px thin yellow;
+    border-color: yellow;
+}
+
+.card-body {
+    background-color: lightgray;
+}
+
+.card-posicao-imagem {
+    object-fit: cover;
+    /*object-position: 0 50%;*/
+    height: 200px;
+}
+
+#movieResult {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: lightgray;
+}
+
+.botao-cor-especial {
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    width: 50%;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    position: absolute;
+    transition: .5s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.container:hover .image {
+    opacity: 0.3;
+}
+
+.container:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    position: absolute;
+    display: flex;
+    background-color: transparent;
+    border-color: yellow;
+    color: yellow;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+
+.text:hover {
+    background-color: yellow;
+    color: black;
+}
+
+#movieSearch {
+    background-color: lightyellow;
+}
+
+.zoom {
+    transform: rotate(360deg);
+}
+
+.container-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 600px;
+    width: 1000px;
+}
+/* 
+#divInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 500px;
+    width: 900px;
+} */
+
+#titleStyle {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 50px;
+    color: white;
+}
+
+#button-hide {
+    padding: 5px;
+    border-radius: 2px;
+    border-color: yellow;
+    background-color: #222523;
+}
