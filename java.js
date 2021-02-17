@@ -86,7 +86,7 @@ for (let i = 0; i < 12; i++) {
 
        };
 
-
+        //craindo o botão hide
         function hide(){
 
             let buttonHide = document.createElement("button");
@@ -106,7 +106,7 @@ for (let i = 0; i < 12; i++) {
             });
 
         };
-
+        // craindo o botao detalhe
         div3.addEventListener("click", () => {
 
             div3.remove();
