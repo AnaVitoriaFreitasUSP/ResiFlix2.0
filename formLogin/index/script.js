@@ -1,10 +1,11 @@
-const btn = document.getElementById("botao-entrar");
-const form = document.getElementById("campo-form");
 const email = document.getElementById("email");
-const senha = document.getElementById("senha") 
+const senha = document.getElementById("senha");
+const btn = document.getElementById("botao-entrar");
 
-btn.addEventListener("click", () => {
-    if(email.value.search(/\@/) != -1 && email.value.search(/[.com]/) != -1){
-        form.innerHTML = `Login efetuado com sucesso!`
-    } 
-})
+let re = /\S+@\S+\.\S+/;
+
+btn.addEventListener("click", ()=>{
+    if (re.test(email.value) && senha.value != "") {
+        document.getElementById("link").setAttribute("href", "./Home/index.html");
+    }
+});
