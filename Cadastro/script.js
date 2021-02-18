@@ -2,14 +2,21 @@ const $ = document.querySelector.bind(document);
 const cep = document.getElementById("cep");
 const nome = document.getElementById("nome")
 cep.addEventListener("focusout", () => {
+    let dadosAPI;
     let xhr = new XMLHttpRequest();
     xhr.open("GET", `https://viacep.com.br/ws/${cep.value}/json`, false);
     xhr.addEventListener("load", () => {
-        let dadosAPI = JSON.parse(xhr.responseText);
-        for(const elemento in dadosAPI) {
-            if($(`#${elemento}`)) {
-                $(`#${elemento}`).value = dadosAPI[elemento];
+        if(xhr.status == 200) {
+            dadosAPI = JSON.parse(xhr.responseText);     
+            console.log(dadosAPI);
+            for(const elemento in dadosAPI) {
+                if($(`#${elemento}`)) {
+                    $(`#${elemento}`).value = dadosAPI[elemento];
+                }
             }
+        }
+        if(dadosAPI.erro == true) {
+            alert("Coloque um CEP válido")
         }
     }) 
     xhr.send();

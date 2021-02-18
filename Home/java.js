@@ -289,13 +289,14 @@ input.addEventListener("keyup", () => {
         document.getElementsByTagName("section")[0].innerText = "";
         let divizinha = document.getElementById("movieResult");
         let request = new XMLHttpRequest();
+        let results;
 
         request.open("GET", `https://www.omdbapi.com/?s=${input.value.toLowerCase().replace(/\s/g, "+")}&plot=short&apikey=ff8d5bd3`);
 
         request.addEventListener("load", () => {
 
             divizinha.innerText = "";
-            let results = JSON.parse(request.responseText).Search;
+            results = JSON.parse(request.responseText).Search;
             for (let movie in results) {
                 if (results[movie].Poster != "N/A") {
                     let img = document.createElement("img");
@@ -306,6 +307,14 @@ input.addEventListener("keyup", () => {
 
             }
             console.log(results);
+            if(JSON.parse(request.responseText).Error == "Movie not found!"){
+                divizinha.innerText = "";
+                divizinha.style.flex = "column";
+                let h3 = document.createElement("h3");
+                h3.textContent = `O título "${input.value}" não consta em nosso banco de dados :(   Tente novamente!`;
+                h3.style.color = "white";
+                divizinha.appendChild(h3);
+            }
         }, false);
 
         request.send();
