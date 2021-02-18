@@ -1,0 +1,36 @@
+
+.form-geral {
+    color: white;
+    display:flex;
+    height: 350px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.btn.btn-outline-success {
+    background-color: yellow;
+    color: black;
+    border-color: black;
+}
+
+.btn.btn-outline-success:hover {
+    color: black;
+    background-color: yellow;
+    border-color: yellow;
+}
+
+.botao-esquecer {
+    text-decoration: none;
+    color: white;
+}
+
+.botao-esquecer:hover {
+    color: white;
+}
+
+
+
+.form-geral {
+    display: flex;
+    justify-content: center;
+}
