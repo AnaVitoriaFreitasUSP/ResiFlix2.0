@@ -270,17 +270,12 @@ input.addEventListener("keyup", () => {
         span4.textContent = "Next";
         a2.appendChild(span4);
 
-
         document.getElementsByTagName("h2")[0].textContent = "ResiliaFlix assista filmes, séries onde e como quiser!";
 
         let divMovies = document.createElement("div");
         divMovies.setAttribute("class", "row justify-content-center");
         document.getElementsByTagName("section")[0].appendChild(divMovies);
         geraPosters();
-
-
-
-
     });
 
     if (input.value.length >= 3) {
@@ -294,7 +289,6 @@ input.addEventListener("keyup", () => {
         request.open("GET", `https://www.omdbapi.com/?s=${input.value.toLowerCase().replace(/\s/g, "+")}&plot=short&apikey=ff8d5bd3`);
 
         request.addEventListener("load", () => {
-
             divizinha.innerText = "";
             results = JSON.parse(request.responseText).Search;
             for (let movie in results) {
@@ -304,7 +298,6 @@ input.addEventListener("keyup", () => {
                     img.style.maxWidth = "150px";
                     divizinha.appendChild(img);
                 }
-
             }
             console.log(results);
             if(JSON.parse(request.responseText).Error == "Movie not found!"){
@@ -316,10 +309,7 @@ input.addEventListener("keyup", () => {
                 divizinha.appendChild(h3);
             }
         }, false);
-
         request.send();
-
-
     }
 });
 
