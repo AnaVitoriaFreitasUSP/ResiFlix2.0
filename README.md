@@ -53,7 +53,3 @@ As seguintes ferramentas foram usadas na construção do projeto até o presente
 - [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [BootStrap](https://getbootstrap.com/)
-
-
-_OBS: Este projeto está sendo atualizado constantemente, sempre que temos algum tempo sobrando aproveitamos para
-implementar novos comportamentos na interface, corrigir bugs etc..._
